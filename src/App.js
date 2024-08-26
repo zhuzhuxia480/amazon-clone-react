@@ -1,17 +1,19 @@
-
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Home from "./Home";
-
-const About = () => <h2>About Page</h2>;
-const Contact = () => <h2>Contact Page</h2>;
+import Header from "./Header";
 
 function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={
+                    <>
+                        <Header/>
+                        <Home/>
+                    </>
+                }/>
             </Routes>
         </Router>
     );
